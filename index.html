@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,7 +18,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -41,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -53,19 +58,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.2" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
 
 
 
@@ -80,11 +85,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '6.0.2',
+    version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    fastclick: true,
-    lazyload: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
@@ -103,11 +108,7 @@
 
 
 
-  
-  <meta name="keywords" content="LisonFan, iOS, Developer" />
-
-
-<meta name="description" content="iOS Developer">
+  <meta name="description" content="iOS Developer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LisonFan&#39;s Blog">
 <meta property="og:url" content="https://blog.lisonfan.com/index.html">
@@ -126,20 +127,18 @@
   <link rel="canonical" href="https://blog.lisonfan.com/"/>
 
 
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
   <title>LisonFan's Blog</title>
   
 
 
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90323488-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-90323488-1');
-</script>
 
 
 
@@ -187,24 +186,26 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">LisonFan's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">iOS Developer</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -212,44 +213,49 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -258,6 +264,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -281,7 +288,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LisonFan">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="iOS Developer">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,11 +303,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/12/macOS 10.13.5 操作信息 APP 无法与 iOS 11.4 同步的一个解决方案/" itemprop="url">macOS 10.13.5 操作信息 APP 无法与 iOS 11.4 同步的一个解决方案</a></h1>
+                <a class="post-title-link" href="/2018/06/12/macOS 10.13.5 操作信息 APP 无法与 iOS 11.4 同步的一个解决方案/" itemprop="url">
+                  macOS 10.13.5 操作信息 APP 无法与 iOS 11.4 同步的一个解决方案
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -308,12 +325,18 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T14:35:00+08:00">2018-06-12</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-12 14:35:00 / 修改时间：14:40:28" itemprop="dateCreated datePublished" datetime="2018-06-12T14:35:00+08:00">2018-06-12</time>
             
 
             
-            
+              
 
+              
             
           </span>
 
@@ -347,19 +370,15 @@
       
         
           
-          在信息 APP 的设置里，取消 “关闭对话时存储历史记录” 的勾选
+            <p>在信息 APP 的设置里，取消 “关闭对话时存储历史记录” 的勾选</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/12/macOS 10.13.5 操作信息 APP 无法与 iOS 11.4 同步的一个解决方案/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -409,7 +428,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LisonFan">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="iOS Developer">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -424,11 +443,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/26/CentOS6-编译安装-Shadowsocks-libev-Simple-obfs-锐速-步骤/" itemprop="url">CentOS6 编译安装 Shadowsocks-libev + Simple-obfs + 锐速 步骤</a></h1>
+                <a class="post-title-link" href="/2018/01/26/CentOS6-编译安装-Shadowsocks-libev-Simple-obfs-锐速-步骤/" itemprop="url">
+                  CentOS6 编译安装 Shadowsocks-libev + Simple-obfs + 锐速 步骤
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -436,12 +465,18 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T15:11:41+08:00">2018-01-26</time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-26 15:11:41 / 修改时间：15:23:27" itemprop="dateCreated datePublished" datetime="2018-01-26T15:11:41+08:00">2018-01-26</time>
             
 
             
-            
+              
 
+              
             
           </span>
 
@@ -475,21 +510,25 @@
       
         
           
-          Tips 1: 请在 root 权限下安装Tips 2: 搬瓦工机器请先执行 yum remove -y epel-release
-更新1yum update -y
-安装 wget1yum install -y wget
-安装锐速1wget -N --no-check-certificate htt
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/26/CentOS6-编译安装-Shadowsocks-libev-Simple-obfs-锐速-步骤/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p><strong>Tips 1: 请在 root 权限下安装<br>Tips 2: 搬瓦工机器请先执行 yum remove -y epel-release</strong></p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
+<h2 id="安装-wget"><a href="#安装-wget" class="headerlink" title="安装 wget"></a>安装 wget</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget</span><br></pre></td></tr></table></figure>
+<h2 id="安装锐速"><a href="#安装锐速" class="headerlink" title="安装锐速"></a>安装锐速</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</span><br></pre></td></tr></table></figure>
+<h2 id="删除安装锐速下载生成的文件和文件夹"><a href="#删除安装锐速下载生成的文件和文件夹" class="headerlink" title="删除安装锐速下载生成的文件和文件夹"></a>删除安装锐速下载生成的文件和文件夹</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf serverspeeder.sh 91yunserverspeeder.tar.gz 91yunserverspeeder</span><br></pre></td></tr></table></figure>
+<h2 id="用来编译安装-Shadowsocks-libev-Simple-obfs。"><a href="#用来编译安装-Shadowsocks-libev-Simple-obfs。" class="headerlink" title="用来编译安装 Shadowsocks-libev + Simple-obfs。"></a>用来编译安装 Shadowsocks-libev + Simple-obfs。</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">yum install -y epel-release</span><br><span class="line">yum install -y git vim screen gettext gcc autoconf libtool automake make asciidoc xmlto udns-devel libev-devel zlib-devel openssl-devel unzip libevent pcre pcre-devel perl perl-devel cpio expat-devel gettext-devel htop rng-tools c-ares-devel</span><br><span class="line"></span><br><span class="line">yum remove -y libtool autoconf automake</span><br><span class="line"></span><br><span class="line">cp /usr/include/libev/* /usr/include/</span><br><span class="line"></span><br><span class="line">chkconfig ip6tables off</span><br><span class="line">chkconfig iptables off</span><br><span class="line">service iptables stop</span><br><span class="line">service ip6tables stop</span><br><span class="line"></span><br><span class="line">export LIBTOOL_VER=2.4.6</span><br><span class="line">wget https://ftp.gnu.org/gnu/libtool/libtool-$LIBTOOL_VER.tar.gz</span><br><span class="line">tar zxf libtool-$LIBTOOL_VER.tar.gz</span><br><span class="line">rm -rf libtool-$LIBTOOL_VER.tar.gz</span><br><span class="line">cd libtool-$LIBTOOL_VER</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make </span><br><span class="line">make install</span><br><span class="line">cd ..</span><br><span class="line">ldconfig</span><br><span class="line">rm -rf libtool-$LIBTOOL_VER</span><br><span class="line"></span><br><span class="line">export AUTOCONF_VER=2.69</span><br><span class="line">wget https://ftp.gnu.org/gnu/autoconf/autoconf-$AUTOCONF_VER.tar.gz</span><br><span class="line">tar zxf autoconf-$AUTOCONF_VER.tar.gz</span><br><span class="line">rm -rf autoconf-$AUTOCONF_VER.tar.gz</span><br><span class="line">cd autoconf-$AUTOCONF_VER</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cd ..</span><br><span class="line">ldconfig</span><br><span class="line">rm -rf autoconf-$AUTOCONF_VER</span><br><span class="line"></span><br><span class="line">export AUTOMAKE_VER=1.15.1</span><br><span class="line">wget https://ftp.gnu.org/gnu/automake/automake-$AUTOMAKE_VER.tar.gz</span><br><span class="line">tar zxf automake-$AUTOMAKE_VER.tar.gz</span><br><span class="line">rm -rf automake-$AUTOMAKE_VER.tar.gz</span><br><span class="line">cd automake-$AUTOMAKE_VER</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make </span><br><span class="line">make install</span><br><span class="line">cd ..</span><br><span class="line">ldconfig</span><br><span class="line">rm -rf automake-$AUTOMAKE_VER</span><br><span class="line"></span><br><span class="line">export LIBSODIUM_VER=1.0.15</span><br><span class="line">wget https://download.libsodium.org/libsodium/releases/libsodium-$LIBSODIUM_VER.tar.gz</span><br><span class="line">tar zxf libsodium-$LIBSODIUM_VER.tar.gz</span><br><span class="line">rm -rf libsodium-$LIBSODIUM_VER.tar.gz</span><br><span class="line">pushd libsodium-$LIBSODIUM_VER</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">popd</span><br><span class="line">ldconfig</span><br><span class="line">rm -rf libsodium-$LIBSODIUM_VER</span><br><span class="line"></span><br><span class="line">export MBEDTLS_VER=2.6.0</span><br><span class="line">wget https://tls.mbed.org/download/mbedtls-$MBEDTLS_VER-gpl.tgz</span><br><span class="line">tar xvf mbedtls-$MBEDTLS_VER-gpl.tgz</span><br><span class="line">rm -rf mbedtls-$MBEDTLS_VER-gpl.tgz</span><br><span class="line">pushd mbedtls-$MBEDTLS_VER</span><br><span class="line">make SHARED=1 CFLAGS=-fPIC</span><br><span class="line">make DESTDIR=/usr install</span><br><span class="line">popd</span><br><span class="line">ldconfig</span><br><span class="line">rm -rf mbedtls-$MBEDTLS_VER</span><br><span class="line"></span><br><span class="line">git clone https://github.com/shadowsocks/shadowsocks-libev.git</span><br><span class="line">cd shadowsocks-libev</span><br><span class="line">git submodule update --init --recursive</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cd ..</span><br><span class="line">rm -rf shadowsocks-libev</span><br><span class="line"></span><br><span class="line">git clone https://github.com/shadowsocks/simple-obfs.git</span><br><span class="line">cd simple-obfs</span><br><span class="line">git submodule update --init --recursive</span><br><span class="line">./autogen.sh</span><br><span class="line">./configure</span><br><span class="line">make </span><br><span class="line">make install</span><br><span class="line">cd ..</span><br><span class="line">rm -rf simple-obfs</span><br></pre></td></tr></table></figure>
+<h2 id="执行完第五步会关闭防火墙，如果需要开启防火墙请看这"><a href="#执行完第五步会关闭防火墙，如果需要开启防火墙请看这" class="headerlink" title="执行完第五步会关闭防火墙，如果需要开启防火墙请看这"></a>执行完第五步会关闭防火墙，如果需要开启防火墙请看这</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chkconfig ip6tables on</span><br><span class="line">chkconfig iptables on</span><br><span class="line">service iptables start</span><br><span class="line">service ip6tables start</span><br></pre></td></tr></table></figure>
+<h2 id="删除安装脚本"><a href="#删除安装脚本" class="headerlink" title="删除安装脚本"></a>删除安装脚本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf auto.sh</span><br></pre></td></tr></table></figure>
+<h2 id="创建-config-json-存放文件夹"><a href="#创建-config-json-存放文件夹" class="headerlink" title="创建 config.json 存放文件夹"></a>创建 config.json 存放文件夹</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/shadowsocks-libev/</span><br></pre></td></tr></table></figure>
+<h2 id="创建-config-json，并写入配置"><a href="#创建-config-json，并写入配置" class="headerlink" title="创建 config.json，并写入配置"></a>创建 config.json，并写入配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks-libev/config.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	"server":["[::0]", "0.0.0.0"],</span><br><span class="line">	"server_port":22222,</span><br><span class="line">	"local_address":"127.0.0.1",</span><br><span class="line">	"local_port":1080,</span><br><span class="line">	"password":"yourpassword",</span><br><span class="line">	"timeout":600,</span><br><span class="line">	"method":"chacha20",</span><br><span class="line">	"fast_open":false,</span><br><span class="line">	"plugin":"obfs-server",</span><br><span class="line">	"plugin_opts":"obfs=http"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建一个-screen-用来运行-ss-server"><a href="#创建一个-screen-用来运行-ss-server" class="headerlink" title="创建一个 screen 用来运行 ss-server"></a>创建一个 screen 用来运行 ss-server</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -R ss-libev</span><br></pre></td></tr></table></figure>
+<h2 id="进入-ss-server-所在目录并运行"><a href="#进入-ss-server-所在目录并运行" class="headerlink" title="进入 ss-server 所在目录并运行"></a>进入 ss-server 所在目录并运行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 进入 ss-server 所在的目录</span><br><span class="line">cd /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 通过 config.json 运行 ss-server</span><br><span class="line"><span class="meta">#</span> 如果想通过其他方式运行 ss-server 请自行 Google 搜索</span><br></pre></td></tr></table></figure>
+          
         
       
     </div>
+
+    
+
     
     
     
@@ -635,7 +674,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">LisonFan</span>
@@ -648,7 +687,7 @@
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -656,7 +695,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.2</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
 
 
 
@@ -667,11 +706,6 @@
 
 
 
-
-
-  <div style="display: none;">
-    <script src="//s95.cnzz.com/z_stat.php?id=1272838725&web_id=1272838725" language="JavaScript"></script>
-  </div>
 
 
 
@@ -702,18 +736,12 @@
 
 
 
-  
-
-
-
-  
 
 
 
 
 
 
-  
 
 
 
@@ -736,16 +764,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -754,18 +772,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.2"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.2"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
 
 
 
@@ -777,7 +790,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
@@ -823,6 +836,8 @@
   
 
   
+  
+
   
 
   
